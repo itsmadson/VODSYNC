@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Twitch VOD Viewer - Cyberpunk Edition</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo">
+        <span class="logo-text">VOD<span class="accent">SYNC</span></span>
+        <div class="glitch-effect"></div>
+      </div>
+      <div class="header-controls">
+        <button id="refresh-btn" class="cyber-btn"><i class="fas fa-sync-alt"></i> SYNC</button>
+      </div>
+    </header>
+    
+    <main>
+        <div class="status-bar">
+            <div class="status-indicator">
+              <span class="pulse"></span>
+              <span id="connection-status">CONNECTING TO NETWORK...</span>
+            </div>
+            <div class="search-container">
+              <div class="streamer-search">
+                <input type="text" id="streamer-search" placeholder="SEARCH BY STREAMER...">
+                <button id="streamer-search-btn" class="cyber-btn cyber-btn-sm">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              <input type="text" id="search-input" placeholder="FILTER STREAMS...">
+            </div>
+          </div>
+      <div id="vod-container" class="vod-container">
+        <!-- VODs will be loaded here -->
+        <div class="loading">
+          <div class="loading-text">SCANNING DATABASE</div>
+          <div class="loading-bar"></div>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <div class="footer-stats">
+        <span id="total-vods">VODs: --</span>
+        <span id="last-updated">LAST SYNC: --:--:--</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
